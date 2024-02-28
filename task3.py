@@ -1,5 +1,4 @@
-#Get important dependencies
-#/usr/bin/python3
+#Personal Property of Owais Ali
 import sys
 from collections import defaultdict
 

@@ -1,22 +1,21 @@
-#!/bin/usr/python3
-#Get all the important dependencies
+
 #Personal Property of Owais Ali
 import subprocess
 import sys
 import platform
 import psutil
 import socket
-#Function to display distro info
+
 def get_distro_info():
     return platform.mac_ver()
-#Function to display memory info
+
 def get_memory_info():
     mem = psutil.virtual_memory()
     total = mem.total
     used = mem.used
     free = mem.free
     return total, used, free
-#Function to display cpu info
+
 def get_cpu_info():
     cpu_info = {
         'model': platform.processor(),
@@ -24,13 +23,13 @@ def get_cpu_info():
         'speed': psutil.cpu_freq().current
     }
     return cpu_info
-#Function to display user info
+
 def get_user_info():
     return platform.node()
-#Function to display load average
+
 def get_load_average():
     return psutil.getloadavg()
-#Function to display ip address
+
 def get_ip_address():
     result = subprocess.run(['ifconfig'], capture_output=True, text=True)
     output = result.stdout
@@ -39,10 +38,10 @@ def get_ip_address():
         if 'inet ' in line:
             parts = line.split()
             ip_address = parts[1]
-            if ip_address != '127.0.0.1':  # Exclude loopback address
+            if ip_address != '127.0.0.1':  
                 return ip_address
     return None
-#Main function where all the information is displayed according to command line arguments
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python script_name.py [-d] [-m] [-c] [-u] [-l] [-i]")

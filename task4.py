@@ -1,4 +1,6 @@
+#Personal Property of Owais Ali
 from collections import defaultdict
+
 
 def count_characters(s):
     char_count = defaultdict(int)
