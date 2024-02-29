@@ -1,20 +1,15 @@
 #Personal Property of Owais Ali
-def min_max_from_unique(nums):
-    
-    unique_nums = list(set(nums))
-    
-    
-    unique_tuple = tuple(unique_nums)
-    
-   
-    min_num = min(unique_nums)
-    max_num = max(unique_nums)
-    
-    return unique_tuple, min_num, max_num
-nums = input("Enter a list of integers separated by commas: ").split(',')
-nums = [int(num) for num in nums]
-unique_tuple, min_num, max_num = min_max_from_unique(nums)
-print("Unique tuple:", unique_tuple)
+# Given a list of integers. Remove duplicates from the list and create a tuple. Find the minimum and maximum number.
+def min_max_from_unique(numbers):
+    unique_numbers = list(set(numbers)) 
+    unique_tuple = tuple(unique_numbers)  
+    min_number = min(unique_tuple)  
+    max_number = max(unique_tuple)  
+    return min_number, max_number
+
+# Example usage:
+numbers = [1, 3, 5, 3, 7, 9, 1, 5]
+min_num, max_num = min_max_from_unique(numbers)
 print("Minimum number:", min_num)
 print("Maximum number:", max_num)
 

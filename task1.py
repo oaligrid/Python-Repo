@@ -1,6 +1,7 @@
 #Personal Property of Owais Ali
-import os
+# Create a script that accepts the file name and puts its extension to output. If there is no extension - an exception should be raised.
 
+import os
 
 def get_file_extension(file_name):
     _, file_extension = os.path.splitext(file_name)
